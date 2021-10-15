@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/Login.css';
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../firebaseConfig";
+import '../styles/Login.css';
 
 function Login() {
     const history = useHistory();
@@ -78,6 +78,6 @@ function Login() {
             </div>
         </div>
     )
-}
+};
 
 export default Login

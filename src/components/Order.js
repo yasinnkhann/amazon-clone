@@ -33,7 +33,7 @@ function Order({ order }) {
                 prefix={'$'}
             />   
         </div>
-    )
-}
+    );
+};
 
 export default Order

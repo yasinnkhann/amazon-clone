@@ -11,7 +11,7 @@ const CheckoutProduct = forwardRef(({ id, image, title, price, rating, hideButto
             type: 'REMOVE_FROM_BASKET',
             id: id,
         })
-    }
+    };
 
     return (
         <div ref={ref} className='checkoutProduct'>
