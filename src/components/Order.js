@@ -1,15 +1,15 @@
 import React from 'react';
+import moment from 'moment';
+import CurrencyFormat from 'react-currency-format';
 import '../styles/Order.css';
-import moment from "moment";
-import CheckoutProduct from "./CheckoutProduct";
-import CurrencyFormat from "react-currency-format";
+import CheckoutProduct from './CheckoutProduct.js';
 
 function Order({ order }) {
     return (
         <div className='order'>
             <h2>Order</h2>
-            <p>{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}</p>
-            <p className="order__id">
+            <p>{moment.unix(order.data.created).format('MMMM Do YYYY, h:mma')}</p>
+            <p className='order__id'>
                 <small>Order ID: {order.id}</small>
             </p>
             {order.data.basket?.map(item => (
@@ -24,13 +24,13 @@ function Order({ order }) {
             ))}
             <CurrencyFormat
                 renderText={(value) => (
-                    <h3 className="order__total">Total: {value}</h3>
+                    <h3 className='order__total'>Total: {value}</h3>
                 )}
                 decimalScale={2}
                 value={order.data.amount / 100}
-                displayType={"text"}
+                displayType={'text'}
                 thousandSeparator={true}
-                prefix={"$"}
+                prefix={'$'}
             />   
         </div>
     )
