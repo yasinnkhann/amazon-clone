@@ -21,7 +21,13 @@ function Product({ id, title, image, price, rating }) {
   };
 
   return (
-    <div className='product'>
+    <motion.div 
+      className='product'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2, duration: 0.5 }}
+      whileHover={{ scale: 1.1 }}
+    >
       <div className='product__info'>
         <p>{title}</p>
         <p className='product__price'>
@@ -40,7 +46,7 @@ function Product({ id, title, image, price, rating }) {
       <img src={image} alt='Some product' />
 
       <button onClick={addToBasket}>Add to Basket</button>
-    </div>
+    </motion.div>
   );
 }
 
