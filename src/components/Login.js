@@ -30,7 +30,9 @@ function Login() {
                 history.push('/');
             }
         })
-        .catch(error => alert(error.message))
+        .catch(err => {
+            alert(err.message);
+        })
     }
 
     return (
