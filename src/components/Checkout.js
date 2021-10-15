@@ -1,9 +1,9 @@
 import React from "react";
 import FlipMove from 'react-flip-move';
-import "./Checkout.css";
-import Subtotal from "./Subtotal";
-import { useStateValue } from "./StateProvider";
-import CheckoutProduct from "./CheckoutProduct";
+import "../styles/Checkout.css";
+import Subtotal from "./Subtotal.js";
+import { useStateValue } from "../stateProvider.js";
+import CheckoutProduct from "./CheckoutProduct.js";
 
 function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();

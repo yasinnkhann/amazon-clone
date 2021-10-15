@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { db } from "./firebase";
-import './Orders.css';
-import { useStateValue } from "./StateProvider";
+import { db } from "../firebaseConfig";
+import '../styles/Orders.css';
+import { useStateValue } from "../stateProvider";
 import Order from './Order';
 
 function Orders() {
@@ -9,9 +9,8 @@ function Orders() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    if(user) {
-        db
-        .collection('users')
+    if (user) {
+        db.collection('users')
         .doc(user?.uid)
         .collection('orders')
         .orderBy('created', 'desc')
