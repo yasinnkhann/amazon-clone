@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import '../styles/App.css';
 import Header from "./Header.js";
 import Home from "./Home.js";
 import Checkout from "./Checkout.js";
