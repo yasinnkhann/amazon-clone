@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
 
-    auth.onAuthStateChanged((authUser) => {
+    auth.onAuthStateChanged(authUser => {
       console.log('THE USER IS >>> ', authUser);
 
       if (authUser) {

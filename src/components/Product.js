@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useStateValue } from '../stateProvider';
 import '../styles/Product.css';
 

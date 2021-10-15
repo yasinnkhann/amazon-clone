@@ -62,14 +62,14 @@ function Payment() {
               })
 
             setSucceeded(true);
-            setError(null)
-            setProcessing(false)
+            setError(null);
+            setProcessing(false);
 
             dispatch({
                 type: 'EMPTY_BASKET'
             })
 
-            history.replace('/orders')
+            history.replace('/orders');
         })
 
     };

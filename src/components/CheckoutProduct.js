@@ -10,7 +10,7 @@ const CheckoutProduct = forwardRef(({ id, image, title, price, rating, hideButto
         dispatch({
             type: 'REMOVE_FROM_BASKET',
             id: id,
-        })
+        });
     };
 
     return (
