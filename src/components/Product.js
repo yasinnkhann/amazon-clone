@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useStateValue } from '../stateProvider';
 import '../styles/Product.css';
 
-function Product({ id, title, image, price, rating }) {
+function Product({ dataObj }) {
   const [{ basket }, dispatch] = useStateValue();
 
   const addToBasket = () => {
@@ -11,11 +11,11 @@ function Product({ id, title, image, price, rating }) {
     dispatch({
       type: 'ADD_TO_BASKET',
       item: {
-        id: id,
-        title: title,
-        image: image,
-        price: price,
-        rating: rating,
+        id: dataObj.id,
+        title: dataObj.title,
+        image: dataObj.image,
+        price: dataObj.price,
+        rating: dataObj.rating,
       },
     });
   };
@@ -29,13 +29,13 @@ function Product({ id, title, image, price, rating }) {
       whileHover={{ scale: 1.1 }}
     >
       <div className='product__info'>
-        <p>{title}</p>
+        <p>{dataObj.title}</p>
         <p className='product__price'>
           <small>$</small>
-          <strong>{price}</strong>
+          <strong>{dataObj.price}</strong>
         </p>
         <div className='product__rating'>
-          {Array(rating)
+          {Array(dataObj.rating)
             .fill()
             .map(() => (
               <p>🌟</p>
@@ -43,7 +43,7 @@ function Product({ id, title, image, price, rating }) {
         </div>
       </div>
 
-      <img src={image} alt='Some product' />
+      <img src={dataObj.image} alt='Some product' />
 
       <button onClick={addToBasket}>Add to Basket</button>
     </motion.div>
