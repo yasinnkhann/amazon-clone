@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { auth } from '../firebaseConfig';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { useStateValue } from '../stateProvider.js';
+import { auth } from '../firebaseConfig.js';
 import '../styles/Header.css';
 
 function Header() {
@@ -33,8 +33,12 @@ function Header() {
       <div className='header__nav'>
         <Link to={!user && '/login'}>
           <div onClick={handleAuthenticaton} className='header__option'>
-            <span className='header__optionLineOne'>Hello {!user ? 'Guest' : user.email}</span>
-            <span className='header__optionLineTwo'>{user ? 'Sign Out' : 'Sign In'}</span>
+            <span className='header__optionLineOne'>
+              Hello {!user ? 'Guest' : user.email}
+            </span>
+            <span className='header__optionLineTwo'>
+              {user ? 'Sign Out' : 'Sign In'}
+            </span>
           </div>
         </Link>
 
@@ -44,7 +48,6 @@ function Header() {
             <span className='header__optionLineTwo'>& Orders</span>
           </div>
         </Link>
-        
 
         <div className='header__option'>
           <span className='header__optionLineOne'>Your</span>
@@ -62,6 +65,6 @@ function Header() {
       </div>
     </div>
   );
-};
+}
 
 export default Header;

@@ -20,7 +20,7 @@ function Checkout() {
         <div>
           <h3>Hello, {user?.email}</h3>
           <h2 className='checkout__title'>Your Shopping Basket</h2>
-          
+
           <FlipMove>
             {basket.map(item => (
               <CheckoutProduct
@@ -40,6 +40,6 @@ function Checkout() {
       </div>
     </div>
   );
-};
+}
 
 export default Checkout;

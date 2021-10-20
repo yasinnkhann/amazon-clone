@@ -19,7 +19,6 @@ function App() {
   const [{}, dispatch] = useStateValue();
 
   useEffect(() => {
-
     auth.onAuthStateChanged(authUser => {
       console.log('THE USER IS >>> ', authUser);
 
@@ -69,6 +68,6 @@ function App() {
       </div>
     </Router>
   );
-};
+}
 
 export default App;

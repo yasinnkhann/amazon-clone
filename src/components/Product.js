@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useStateValue } from '../stateProvider';
+import { useStateValue } from '../stateProvider.js';
 import '../styles/Product.css';
 
 function Product({ dataObj }) {
@@ -21,7 +21,7 @@ function Product({ dataObj }) {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className='product'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
